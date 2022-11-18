@@ -1,0 +1,3 @@
+/Users/wsq/Documents/OpenGL/LearnOpenGL01/cmake-build-debug/CMakeFiles/LearnOpenGL01.dir
+/Users/wsq/Documents/OpenGL/LearnOpenGL01/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/wsq/Documents/OpenGL/LearnOpenGL01/cmake-build-debug/CMakeFiles/rebuild_cache.dir
