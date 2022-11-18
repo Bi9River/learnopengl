@@ -5,6 +5,7 @@
 #include<glm/gtc/matrix_transform.hpp>
 #include<glm/gtc/type_ptr.hpp>
 #include<iostream>
+#include<LearnOpenGL/camera.h>
 
 
 #define STB_IMAGE_IMPLEMENTATION
