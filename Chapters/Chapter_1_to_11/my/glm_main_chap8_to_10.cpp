@@ -1,5 +1,6 @@
 // finished chapter 9
 // starting chapter 10
+// 这个是最终的代码
 
 #include"glm/glm.hpp"
 #include"glm/gtc/matrix_transform.hpp"
@@ -13,7 +14,7 @@
 #include "LearnOpenGL/stb_image.h"
 #include "glad/glad.h"
 #include <GLFW/glfw3.h>
-#include"LearnOpenGL/shader_s.h"
+#include"LearnOpenGL/shader_m.h"
 #include <iostream>
 #include <cmath>
 
@@ -81,7 +82,7 @@ int main() {
     glfwSetScrollCallback(window, scroll_callback);
 
     // NEW : new shader usage
-    Shader ourShader("../shader.vs", "../shader.fs");
+    Shader ourShader("../src/shaders/shader.vs", "../src/shaders/shader.fs");
 
 
 

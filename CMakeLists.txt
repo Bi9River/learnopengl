@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.22)
 project(LearnOpenGL01)
 
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 
 if (NOT DEFINED ENV{GLFW_HOME})
     message(FATAL_ERROR "found no env named GLFW_HOME")
@@ -18,6 +18,6 @@ add_library(glfw SHARED IMPORTED)
 SET_TARGET_PROPERTIES(glfw PROPERTIES IMPORTED_LOCATION "${GLFW_HOME}/lib/libglfw.3.dylib")
 
 
-add_executable(LearnOpenGL01 Chapter_1_to_11/my/glm_main_chap8.cpp "src/glad.c" include/LearnOpenGL/camera.h)
+add_executable(LearnOpenGL01 Chapters/Chapter_1_to_11/my/glm_main_chap8_to_10.cpp "src/glad.c" include/LearnOpenGL/camera.h)
 
 target_link_libraries(LearnOpenGL01 glfw "-framework OpenGL")
