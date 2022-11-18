@@ -18,6 +18,6 @@ add_library(glfw SHARED IMPORTED)
 SET_TARGET_PROPERTIES(glfw PROPERTIES IMPORTED_LOCATION "${GLFW_HOME}/lib/libglfw.3.dylib")
 
 
-add_executable(LearnOpenGL01 glm_main_chap8.cpp "src/glad.c" include/LearnOpenGL/camera.h)
+add_executable(LearnOpenGL01 Chapter_1_to_11/my/glm_main_chap8.cpp "src/glad.c" include/LearnOpenGL/camera.h)
 
 target_link_libraries(LearnOpenGL01 glfw "-framework OpenGL")

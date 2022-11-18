@@ -1,19 +1,19 @@
 // finished chapter 9
 // starting chapter 10
 
-#include<glm/glm.hpp>
-#include<glm/gtc/matrix_transform.hpp>
-#include<glm/gtc/type_ptr.hpp>
+#include"glm/glm.hpp"
+#include"glm/gtc/matrix_transform.hpp"
+#include"glm/gtc/type_ptr.hpp"
 #include<iostream>
-#include<LearnOpenGL/camera.h>
+#include"LearnOpenGL/camera.h"
 
 
 #define STB_IMAGE_IMPLEMENTATION
 
 #include "LearnOpenGL/stb_image.h"
-#include <glad/glad.h>
+#include "glad/glad.h"
 #include <GLFW/glfw3.h>
-#include<LearnOpenGL/shader_s.h>
+#include"LearnOpenGL/shader_s.h"
 #include <iostream>
 #include <cmath>
 
