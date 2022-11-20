@@ -19,5 +19,7 @@ SET_TARGET_PROPERTIES(glfw PROPERTIES IMPORTED_LOCATION "${GLFW_HOME}/lib/libglf
 
 
 add_executable(LearnOpenGL01 Chapters/Lighting_Chap_12_to_18/lighting_main.cpp "src/glad.c" include/LearnOpenGL/camera.h)
+# test
+# add_executable(LearnOpenGL01 test/test_phong.cpp "src/glad.c" include/LearnOpenGL/camera.h)
 
 target_link_libraries(LearnOpenGL01 glfw "-framework OpenGL")
