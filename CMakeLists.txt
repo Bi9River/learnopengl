@@ -17,6 +17,8 @@ include_directories("include")
 add_library(glfw SHARED IMPORTED)
 SET_TARGET_PROPERTIES(glfw PROPERTIES IMPORTED_LOCATION "${GLFW_HOME}/lib/libglfw.3.dylib")
 
+configure_file(configuration/root_directory.h.in configuration/root_directory.h)
+include_directories(${CMAKE_BINARY_DIR}/configuration)
 
 add_executable(LearnOpenGL01 chapters/Lighting_Chap_12_to_18/lighting_main.cpp "src/glad.c" include/LearnOpenGL/camera.h)
 # test
