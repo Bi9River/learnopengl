@@ -9,6 +9,9 @@
 #include"LearnOpenGL/shader_m.h"
 #include <cmath>
 #include <LearnOpenGL/filesystem.h>
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
 
 #define STB_IMAGE_IMPLEMENTATION
 
