@@ -29,7 +29,7 @@ SET_TARGET_PROPERTIES(assimp PROPERTIES IMPORTED_LOCATION "${ASSIMP_HOME}/lib/li
 configure_file(configuration/root_directory.h.in configuration/root_directory.h)
 include_directories(${CMAKE_BINARY_DIR}/configuration)
 
-add_executable(LearnOpenGL01 chapters/Lighting_Chap_12_to_18/lighting_main.cpp "src/glad.c" include/LearnOpenGL/camera.h)
+add_executable(LearnOpenGL01 chapters/advanced_opengl/advanced_depth_testing.cpp "src/glad.c" include/LearnOpenGL/camera.h)
 # test
 # add_executable(LearnOpenGL01 test/test_phong.cpp "src/glad.c" include/LearnOpenGL/camera.h)
 
