@@ -34,11 +34,6 @@ float fov = 45.0f;
 float deltaTime = 0.0f; // time between current frame and last frame
 float lastFrame = 0.0f; // time of last frame
 
-// lighting
-// glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
-
-
-
 int main() {
     // glfw: initialize and configure
     // ------------------------------
