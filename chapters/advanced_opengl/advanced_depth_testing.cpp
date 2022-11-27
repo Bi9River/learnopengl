@@ -75,7 +75,8 @@ int main() {
     glfwSetScrollCallback(window, scroll_callback);
 
     // shader declaration
-    Shader lightingShader("../src/shaders/depth_testing_shader.vert", "../src/shaders/depth_testing_shader.frag");
+    Shader lightingShader("../chapters/advanced_opengl/shaders_depth_and_stencil_testing/depth_testing_shader.vert",
+                          "../chapters/advanced_opengl/shaders_depth_and_stencil_testing/depth_testing_shader.frag");
     // Shader lightSourceShader("../src/shaders/lightsource_shader.vs", "../src/shaders/lightsource_shader.fs");
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
