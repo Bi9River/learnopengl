@@ -79,8 +79,8 @@ int main() {
     glfwSetScrollCallback(window, scroll_callback);
 
     // shader declaration
-    Shader lightingShader("../chapters/advanced_opengl/shaders_depth_and_stencil_testing/depth_testing_shader.vert",
-                          "../chapters/advanced_opengl/shaders_depth_and_stencil_testing/depth_testing_shader.frag");
+    Shader lightingShader("../chapters/advanced_opengl/shaders_cubemap/cubemap_object.vert",
+                          "../chapters/advanced_opengl/shaders_cubemap/cubemap_object.frag");
     Shader skyboxShader("../chapters/advanced_opengl/shaders_cubemap/cubemap.vert",
                         "../chapters/advanced_opengl/shaders_cubemap/cubemap.frag");
     // Shader lightSourceShader("../src/shaders/lightsource_shader.vs", "../src/shaders/lightsource_shader.fs");
@@ -146,6 +146,15 @@ int main() {
                     FileSystem::getPath("resources/skybox/front.jpg"),
                     FileSystem::getPath("resources/skybox/back.jpg")
             };
+    std::vector<std::string> faces_2
+            {
+                    FileSystem::getPath("resources/skybox_1/right.png"),
+                    FileSystem::getPath("resources/skybox_1/left.png"),
+                    FileSystem::getPath("resources/skybox_1/top.png"),
+                    FileSystem::getPath("resources/skybox_1/bottom.png"),
+                    FileSystem::getPath("resources/skybox_1/front.png"),
+                    FileSystem::getPath("resources/skybox_1/back.png")
+            };
 
     unsigned int skyboxVAO, skyboxVBO;
     glGenVertexArrays(1, &skyboxVAO);
@@ -158,9 +167,15 @@ int main() {
 
 
     unsigned int cubemapTexture = loadCubemap(faces);
+    unsigned int cubemapTexture2 = loadCubemap(faces_2);
 
     skyboxShader.use();
     skyboxShader.setInt("skybox", 0);
+    // glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
+
+
+    // lightingShader.use();
+    //lightingShader.setInt("skybox",0);
 
     // render loop
     // -----------
@@ -183,6 +198,8 @@ int main() {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         lightingShader.use();
+
+        lightingShader.setVec3("cameraPos", camera.Position);
         // view/projection transformations
         glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float) SCR_WIDTH / (float) SCR_HEIGHT, 0.1f,
                                                 100.0f);
@@ -195,6 +212,8 @@ int main() {
         model = glm::translate(model, glm::vec3(0.0f));
         model = glm::scale(model, glm::vec3(1.0f, 1.0f, 1.0f));
         lightingShader.setMat4("model", model);
+        // glBindTexture(GL_TEXTURE_CUBE_MAP,cubemapTexture); // NOTE: Cubemap_Notes.
+
         ourModel.Draw(lightingShader);
 
         glDepthFunc(GL_LEQUAL);
@@ -205,7 +224,7 @@ int main() {
         skyboxShader.setMat4("view", viewSkybox);
         skyboxShader.setMat4("projection", projectionSkybox);
         glBindVertexArray(skyboxVAO);
-        glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture);
+        glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture2);
         glDrawArrays(GL_TRIANGLES, 0, 36);
         glBindVertexArray(0);
         glDepthFunc(GL_LESS);
