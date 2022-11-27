@@ -224,7 +224,7 @@ int main() {
         skyboxShader.setMat4("view", viewSkybox);
         skyboxShader.setMat4("projection", projectionSkybox);
         glBindVertexArray(skyboxVAO);
-        glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture2);
+        //glBindTexture(GL_TEXTURE_CUBE_MAP, cubemapTexture2);
         glDrawArrays(GL_TRIANGLES, 0, 36);
         glBindVertexArray(0);
         glDepthFunc(GL_LESS);
