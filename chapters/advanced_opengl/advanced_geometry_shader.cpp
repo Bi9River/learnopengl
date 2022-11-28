@@ -79,6 +79,12 @@ int main() {
                   "../chapters/advanced_opengl/shaders_geometry_shader/geometry.frag",
                   "../chapters/advanced_opengl/shaders_geometry_shader/geometry.geom");
 
+    Shader normalShader("../chapters/advanced_opengl/shaders_geometry_shader/show_normal.vert",
+                        "../chapters/advanced_opengl/shaders_geometry_shader/show_normal.frag",
+                        "../chapters/advanced_opengl/shaders_geometry_shader/show_normal.geom");
+    Shader lightingShader("../chapters/advanced_opengl/shaders_depth_and_stencil_testing/depth_testing_shader.vert",
+                          "../chapters/advanced_opengl/shaders_depth_and_stencil_testing/depth_testing_shader.frag");
+
     Model ourModel(FileSystem::getPath("resources/tea_set_01_1k.obj"));
 
     // render loop
@@ -97,16 +103,28 @@ int main() {
                                                 100.0f);
         glm::mat4 view = camera.GetViewMatrix();
         glm::mat4 model = glm::mat4(1.0f);
+        model = glm::scale(model, glm::vec3(5.0, 5.0, 5.0));
 
-        shader.use();
-        shader.setMat4("projection", projection);
-        shader.setMat4("view", view);
-        shader.setMat4("model", model);
+//        shader.use();
+//        shader.setMat4("projection", projection);
+//        shader.setMat4("view", view);
+//        shader.setMat4("model", model);
+//
+//        // add time component to geometry shader in the form of a uniform
+//        shader.setFloat("time", static_cast<float>(glfwGetTime()));
+        lightingShader.use();
+        lightingShader.setMat4("projection", projection);
+        lightingShader.setMat4("view", view);
+        lightingShader.setMat4("model", model);
+        ourModel.Draw(lightingShader);
 
-        // add time component to geometry shader in the form of a uniform
-        shader.setFloat("time", static_cast<float>(glfwGetTime()));
-
-        ourModel.Draw(shader);
+        normalShader.use();
+        model = glm::mat4(1.0f);
+        model = glm::scale(model, glm::vec3(5.0, 5.0, 5.0));
+        normalShader.setMat4("projection", projection);
+        normalShader.setMat4("view", view);
+        normalShader.setMat4("model", model);
+        ourModel.Draw(normalShader);
 
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
