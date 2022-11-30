@@ -40,7 +40,7 @@ public:
 
     void Draw(Shader &shader);
 
-private:
+// private:
     // render data
     unsigned int VAO, VBO, EBO;
 

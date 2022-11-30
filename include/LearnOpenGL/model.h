@@ -44,7 +44,7 @@ public:
     }
 
 
-private:
+//private:
     std::vector<Mesh> meshes;
     std::string directory;
 
