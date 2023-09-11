@@ -87,7 +87,8 @@ fabric.properties
 *.slo
 *.lo
 *.o
-out/build/*.obj
+*.obj
+!resources/
 
 # Precompiled Headers
 *.gch
