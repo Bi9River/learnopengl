@@ -59,8 +59,8 @@ endif()
 configure_file(configuration/root_directory.h.in configuration/root_directory.h)
 include_directories(${CMAKE_BINARY_DIR}/configuration)
 
-# add_executable(LearnOpenGL01 chapters/advanced_opengl/advanced_anti_aliasing_offscreen.cpp "src/glad.c" include/LearnOpenGL/camera.h)
-add_executable(LearnOpenGL01 chapters/advanced_opengl/advanced_framebuffer.cpp "src/glad.c" include/LearnOpenGL/camera.h)
+add_executable(LearnOpenGL01 chapters/advanced_opengl/advanced_anti_aliasing_offscreen.cpp "src/glad.c" include/LearnOpenGL/camera.h)
+# add_executable(LearnOpenGL01 chapters/advanced_opengl/advanced_framebuffer.cpp "src/glad.c" include/LearnOpenGL/camera.h)
 
 # test
 # add_executable(LearnOpenGL01 test/test_phong.cpp "src/glad.c" include/LearnOpenGL/camera.h)

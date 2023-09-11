@@ -39,7 +39,7 @@
 - [x] Advanced GLSL
 - [x] Geometry Shader
 - [x] Instancing
-- [ ] Anti Aliasing
+- [x] Anti Aliasing
 
 - Chapter 5 - Advanced Lighting
 - [ ] Advanced Lighting
