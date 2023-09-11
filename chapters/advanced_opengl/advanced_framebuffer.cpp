@@ -77,10 +77,17 @@ int main() {
 
     glEnable(GL_DEPTH_TEST);
 
-    Shader shader("../chapters/advanced_opengl/shaders_framebuffer/framebuffer.vert",
-                  "../chapters/advanced_opengl/shaders_framebuffer/framebuffer.frag");
+	
+
+    Shader shader("../../../chapters/advanced_opengl/shaders_framebuffer/framebuffer.vert",
+                  "../../../chapters/advanced_opengl/shaders_framebuffer/framebuffer.frag");
+    Shader screenShader("../../../chapters/advanced_opengl/shaders_framebuffer/framebuffer_screen.vert",
+                        "../../../chapters/advanced_opengl/shaders_framebuffer/framebuffer_screen.frag");
+
+    /*Shader shader("../chapters/advanced_opengl/shaders_framebuffer/framebuffer.vert",
+        "../chapters/advanced_opengl/shaders_framebuffer/framebuffer.frag");
     Shader screenShader("../chapters/advanced_opengl/shaders_framebuffer/framebuffer_screen.vert",
-                        "../chapters/advanced_opengl/shaders_framebuffer/framebuffer_screen.frag");
+        "../chapters/advanced_opengl/shaders_framebuffer/framebuffer_screen.frag");*/
 
 
     float cubeVertices[] = {
