@@ -71,10 +71,10 @@ int main() {
     glEnable(GL_DEPTH_TEST);
 
     //build and compile shaders
-    Shader shader("../chapters/advanced_opengl/shaders_anti_aliasing/anti_aliasing.vert",
-                  "../chapters/advanced_opengl/shaders_anti_aliasing/anti_aliasing.frag");
-    Shader screenShader("../chapters/advanced_opengl/shaders_anti_aliasing/aa_post.vert",
-                        "../chapters/advanced_opengl/shaders_anti_aliasing/aa_post.frag");
+    Shader shader("../../../chapters/advanced_opengl/shaders_anti_aliasing/anti_aliasing.vert",
+                  "../../../chapters/advanced_opengl/shaders_anti_aliasing/anti_aliasing.frag");
+    Shader screenShader("../../../chapters/advanced_opengl/shaders_anti_aliasing/aa_post.vert",
+                        "../../../chapters/advanced_opengl/shaders_anti_aliasing/aa_post.frag");
 
     // set up vertex data (and buffer(s)) and configure vertex attributes
     float cubeVertices[] = {
@@ -147,8 +147,8 @@ int main() {
     unsigned int quadVAO, quadVBO;
     glGenVertexArrays(1, &quadVAO);
     glGenBuffers(1, &quadVBO);
-    glBindVertexArray(cubeVAO);
-    glBindBuffer(GL_ARRAY_BUFFER, cubeVBO);
+    glBindVertexArray(quadVAO);
+    glBindBuffer(GL_ARRAY_BUFFER, quadVBO);
     glBufferData(GL_ARRAY_BUFFER, sizeof(quadVertices), &quadVertices, GL_STATIC_DRAW);
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(float), (void *) 0);
@@ -247,7 +247,7 @@ int main() {
 
         // 3. now render quad with scene's visuals as its texture image
         glBindFramebuffer(GL_FRAMEBUFFER, 0);
-        glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+        glClearColor(0.0f, 1.0f, 1.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
         glDisable(GL_DEPTH_TEST);
 
