@@ -3,7 +3,9 @@ project(LearnOpenGL01)
 
 set(CMAKE_CXX_STANDARD 17)
 
+if(WIN32)
 find_package(ZLIB REQUIRED)
+endif()
 
 if (NOT DEFINED ENV{GLFW_HOME})
     message(FATAL_ERROR "found no env named GLFW_HOME")
@@ -59,7 +61,7 @@ endif()
 configure_file(configuration/root_directory.h.in configuration/root_directory.h)
 include_directories(${CMAKE_BINARY_DIR}/configuration)
 
-add_executable(LearnOpenGL01 chapters/advanced_opengl/advanced_anti_aliasing_offscreen.cpp "src/glad.c" include/LearnOpenGL/camera.h)
+add_executable(LearnOpenGL01 chapters/advanced_lighting/blinn_phong.cpp "src/glad.c" include/LearnOpenGL/camera.h)
 # add_executable(LearnOpenGL01 chapters/advanced_opengl/advanced_framebuffer.cpp "src/glad.c" include/LearnOpenGL/camera.h)
 
 # test
