@@ -35,7 +35,8 @@ endif()
 
 if(APPLE)
 add_library(glfw SHARED IMPORTED)
-SET_TARGET_PROPERTIES(glfw PROPERTIES IMPORTED_LOCATION "${GLFW_HOME}/lib/libglfw.3.dylib")
+# Remember to check the libglfw dylib file name!
+SET_TARGET_PROPERTIES(glfw PROPERTIES IMPORTED_LOCATION "${GLFW_HOME}/lib/libglfw.3.4.dylib")
 
 add_library(assimp SHARED IMPORTED)
 SET_TARGET_PROPERTIES(assimp PROPERTIES IMPORTED_LOCATION "${ASSIMP_HOME}/lib/libassimp.dylib")
